@@ -1,0 +1,55 @@
+import java.util.Scanner;
+class check
+{
+	public int factorial(int n)
+	{
+		int fact=1;
+		while(n!=0)
+		{
+			fact=fact*n;
+			n=n-1;
+		}
+		return fact;
+	}
+	public void checks(int n)
+	{
+		int s=0;
+		int temp=n;
+		while(temp!=0)
+		{
+			s=s+factorial(temp%10);
+			temp=temp/10;
+		}
+		if(s==n)
+			System.out.println(n+" is a krishnamurthy number");
+		else
+			System.out.println(n+" is not a krishnamurthy number");
+	}
+}		
+class knumber
+{
+	public static void main(String Str[])
+	{
+		Scanner sc=new Scanner(System.in);
+		check obj=new check();
+		int c=0;
+		while(c!=2)
+		{
+			System.out.println("\n\nEnter your choice");
+			System.out.println(" 1 Check\n 2 Exit\n");
+			c=sc.nextInt();
+			switch(c)
+			{		
+				case 1:System.out.println("\nEnter the number to be checked");
+				       int x=sc.nextInt();
+				       obj.checks(x);
+				       break;
+				case 2: System.out.println("Exit");
+					System.exit(0);
+					break;
+			     	default: System.out.println("\nEnter the correct choice");
+			     		break;
+			}
+		}
+	}
+}	
